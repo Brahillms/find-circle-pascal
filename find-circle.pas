@@ -36,6 +36,7 @@ begin
 				radius := circumference / tau;
 
 				writeLn('Your circle''s radius is ', radius:1:6, '.');
+			end;
 		'3' : exit;
 		
 		'4' : exit;
