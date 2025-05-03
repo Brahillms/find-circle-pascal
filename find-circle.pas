@@ -2,9 +2,11 @@ program findCircle;
 
 {$mode objfpc}{$H+}
 
+uses Math;
+
 var
 	mode: char;
-	radius, circumference: single;
+	radius, circumference, area: single;
 
 const
 	tau = pi * 2;
@@ -37,9 +39,26 @@ begin
 
 				writeLn('Your circle''s radius is ', radius:1:6, '.');
 			end;
-		'3' : exit;
-		
-		'4' : exit;
+		'3' :
+			{Diameter mode}
+			begin
+				write(sLineBreak + 'Please put the radius of your circle you want to find the diameter of: ');
+				readLn(radius);
+
+				radius := radius * 2;
+
+				writeLn('Your circle''s diameter is ', radius:1:6, '.');
+			end;
+		'4' :
+			{Area mode}
+			begin
+				write(sLineBreak + 'Please put the radius of your circle you want to find the area of: ');
+				readLn(radius);
+
+				area := pi * Power(radius, 2);
+
+				writeLn('Your circle''s area is ', area:1:6, '.');
+			end;
 	end;
 end.
 
