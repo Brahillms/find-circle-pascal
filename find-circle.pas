@@ -4,7 +4,7 @@ program findCircle;
 
 var
 	mode: char;
-	responseInput, circumference: single;
+	radius, circumference: single;
 
 const
 	tau = pi * 2;
@@ -18,16 +18,24 @@ begin
 
 	case (mode) of
 		'1' :
+			{Circumference mode}
 			begin
-				write(sLineBreak + 'Please put the radius of your circle you want to find the circumference of:');
-				readLn(responseInput);
+				write(sLineBreak + 'Please put the radius of your circle you want to find the circumference of: ');
+				readLn(radius);
 			
-				circumference := responseInput * tau;
+				circumference := radius * tau;
 
-				writeLn('Your circle’s circumference is ', circumference:1:6, '.');
+				writeLn('Your circle''s circumference is ', circumference:1:6, '.');
 			end;
-		'2' : exit; 
-		
+		'2' :
+			{Radius mode}
+			begin
+				write(sLineBreak + 'Please put the circumference of your circle you want to find the radius of: ');
+				readLn(circumference);
+				
+				radius := circumference / tau;
+
+				writeLn('Your circle''s radius is ', radius:1:6, '.');
 		'3' : exit;
 		
 		'4' : exit;
