@@ -7,7 +7,7 @@ uses Math, sysutils;
 var
 	mode: WideChar;
 	radius, circumference: string;
-	convRadius, convCircumference, area: single;
+	convRadius, convCircumference, area: extended;
 	loopShouldBreak: boolean;
 
 const
